@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+            p {
+                text-indent: 30px;
+            }
+            h1 {
+                width:500px;
+                margin: 0 auto;
+            }
+            h2 {
+                width:300px;
+                margin: 0 auto;
+            }
+            input {
+                font-size:14pt;
+                margin: 1mm auto;
+                text-align: center;
+                width: 700px;
+                box-sizing: border-box;
+                border: 1px solid #999;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="text">predict plain text</a>
+        <form method = "post">
+            <div style="text-align: center;">
+                <h1>Github Issues Classifier</h1>
+
+                <p><label> link to issue <br/>
+                    <input type = "text"
+                           name = "link" placeholder="e.g., https://github.com/tensorflow/serving/issues/2084" />
+                </label> <button type="submit">Predict</button> </p>
+                {% if text %}
+                <h2>{{ predictions }}</h2>
+                <h6>{{ link }}</h6>
+                <p style="padding: 35px 70px 50px; text-align: left"> {{text}} </p>
+                {% endif %}
+            </div>
+        </form>
+    </body>
+</html>

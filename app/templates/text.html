@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+            p {
+                text-indent: 30px;
+            }
+            h1 {
+                width:500px;
+                margin: 0 auto;
+            }
+            h2 {
+                width:300px;
+                margin: 0 auto;
+            }
+            input {
+                font-size:14pt;
+                margin: 1mm auto;
+                text-align: center;
+                width: 700px;
+                box-sizing: border-box;
+                border: 1px solid #999;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="/">predict issues</a>
+        <form method = "post">
+            <div style="text-align: center;">
+                <h1>Github Issues Classifier</h1>
+                <h3>Try on arbitrary text!</h3>
+
+                <p>
+                    <textarea name="input_text" cols="140" rows="10"></textarea>
+                </label></p>
+                <button type="submit">Predict</button><br/><br/> 
+                {% if input_text %}
+                <h2>{{ predictions }}</h2>
+                <p style="padding: 35px 70px 50px; text-align: left"> {{input_text}} </p>
+                {% endif %}
+            </div>
+        </form>
+    </body>
+</html>
